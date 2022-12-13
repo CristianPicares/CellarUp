@@ -9,6 +9,9 @@ from django.shortcuts import redirect
 def index(request):
     return render(request,'index.html')
 
+def codigoQR(request):
+    return render(request,'codigoQR.html')
+
 def agregarProducto(request):
     form = forms.FormProducto()
     if request.method == 'POST':
