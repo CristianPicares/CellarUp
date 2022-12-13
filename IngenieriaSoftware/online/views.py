@@ -64,3 +64,22 @@ def agregarOrdenVenta(request):
             'titulo':'AGREGAR ORDEN',
              'boton':'AGREGAR ORDEN'}
     return render(request, 'agregarOrdenVenta.html', data)
+
+def actualizarOrdenVenta(request, id):
+    ventas = OrdenVenta.objects.get(idVenta = id)
+    form = FormVenta(instance=ventas)
+    print(request.method+' '+str(id))
+    if request.method == 'POST':
+        form = FormVenta(request.POST, instance=ventas)
+        if form.is_valid():
+            form.save()
+        return redirect('/listaVentas')
+    datos = {'form':form,
+             'titulo':'ACTUALIZAR ORDEN',
+             'boton':'ACTUALIZAR ORDEN'}
+    return render(request,'agregarOrdenVenta.html',datos)
+
+def eliminarOrdenVenta(request, id):
+    ventas = OrdenVenta.objects.get(idVenta = id)
+    ventas.delete()
+    return redirect('/listaVentas')
