@@ -1,6 +1,6 @@
 from django.shortcuts import render
-from online.models import Producto
-from online.forms import FormProducto
+from online.models import Producto, OrdenVenta
+from online.forms import FormProducto, FormVenta
 from . import forms
 from django.shortcuts import redirect
 
@@ -47,3 +47,20 @@ def eliminarProducto(request, id):
     producto = Producto.objects.get(idProducto = id)
     producto.delete()
     return redirect('/listaProductos')
+
+def listaVentas(request):
+    ventas = OrdenVenta.objects.all()
+    data = {'ventas':ventas}
+    return render(request, 'paginaVenta.html', data)
+
+def agregarOrdenVenta(request):
+    form = forms.FormVenta()
+    if request.method == 'POST':
+        form = FormVenta(request.POST)
+        if form.is_valid():
+            form.save()
+        return listaVentas(request)
+    data = {'form' : form,
+            'titulo':'AGREGAR ORDEN',
+             'boton':'AGREGAR ORDEN'}
+    return render(request, 'agregarOrdenVenta.html', data)

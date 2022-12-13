@@ -11,3 +11,8 @@ class Producto(models.Model):
     pesoProducto = models.CharField(max_length=6)
     marcaProducto = models.CharField(max_length=10)
     ubicacion = models.CharField(max_length=6)
+    
+class OrdenVenta(models.Model):
+    idVenta = models.AutoField(primary_key=True)
+    producto = models.CharField(max_length=50)
+    cantidad = models.IntegerField()
