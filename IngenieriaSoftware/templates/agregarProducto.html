@@ -15,12 +15,10 @@
     <title>AgreProducto</title>
 </head>
 <body class="index">
-
     <nav class="navbar">
         <label for="" class="brand">
             <a href=""><img src= "{%static "images/logo3.png" %}"></a>
         </label>
-
         <label class="centrado">
             <a href="">Bodegueria.com</a>
         </label>
@@ -31,18 +29,17 @@
             <li><a href="../">Salir</a></li>
         </ul>
     </nav>
-    <div class="alert alert-info display-1 text-center">{{ titulo }}</div>
-    <form method="POST">
-        <div class="container text-bg-dark p-3">
-                {{ form.as_p }}
-                {% csrf_token %}
-                <input type="submit" value="{{ boton }}" class="btn btn-info">
-
-        </div>
-    </form>
-    
-
-    <a href="/listaProductos/" class="btn btn-info mt-5">VOLVER</a>
-    
+    <!--Cuerpo del agregado de productos-->
+    <div class="container">
+        <div class="alert alert-info display-6 text-center">{{ titulo }}</div>
+        <form method="POST">
+            <div class="container text-bg-dark p-3">
+                    {{ form.as_p }}
+                    {% csrf_token %}
+                    <input type="submit" value="{{ boton }}" class="btn btn-info">
+            </div>
+        </form>
+        <a href="/listaProductos/" class="btn btn-info mt-5">VOLVER</a>
+    </div>
 </body>
 </html>
