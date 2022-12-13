@@ -23,6 +23,7 @@ urlpatterns = [
     path('listaProductos/', listaProductos),
     path('agregarProducto/', agregarProducto),
     path('codigoQR/', codigoQR),
+    path('login/', codigoQR),
     path('actualizarProducto/<int:id>', actualizarProducto),
     path('eliminarProducto/<int:id>', eliminarProducto),
     path('listaVentas/', listaVentas),
