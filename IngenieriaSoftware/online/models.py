@@ -9,4 +9,5 @@ class Producto(models.Model):
     colorProducto = models.CharField(max_length=20)
     dimesionesProducto = models.CharField(max_length=15)
     pesoProducto = models.CharField(max_length=6)
-    marcaProducto = models.CharField(max_length=6)
+    marcaProducto = models.CharField(max_length=10)
+    ubicacion = models.CharField(max_length=6)

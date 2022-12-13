@@ -44,6 +44,7 @@
                         <th>Dimesiones producto</th>
                         <th>Peso producto</th>
                         <th>Marca producto</th>
+                        <th>Ubicación</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -55,6 +56,7 @@
                             <th>{{producto.dimesionesProducto}}</th>
                             <th>{{producto.pesoProducto}}</th>
                             <th>{{producto.marcaProducto}}</th>
+                            <th>{{producto.ubicacion}}</th>
                             <th><a href='/actualizarProducto/{{producto.idProducto}}' class='btn btn-success btn-sm'><i class='bi bi-pencil'></i></th>
                             <th><a href='/eliminarProducto/{{producto.idProducto}}' class='btn btn-danger btn-sm'><i class='bi bi-trash'></i></th>
                         </tr>
