@@ -39,7 +39,7 @@
                 <tbody>
                     {% for venta in ventas %}
                         <tr>
-                            <th>{{venta.idVenta }}</th>
+                            <th>{{venta.idVenta}}</th>
                             <th>{{venta.producto}}</th>
                             <th>{{venta.cantidad}}</th>
                             <th><a href='/actualizarProducto/{{venta.idVenta}}' class='btn btn-success btn-sm'><i class='bi bi-pencil'></i></th>
@@ -54,7 +54,7 @@
                 <strong>NO HAY ORDENES INGRESADAS</strong>
         </div>
         {% endif %}
-
+    </div>
     <footer>
         <p>Numero de telefono: 545648794</p>
         <p>Dirección: Cuatro de algo #12345</p>
