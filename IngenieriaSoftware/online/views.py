@@ -34,7 +34,7 @@ def actualizarProducto(request, id):
         form = FormProducto(request.POST, instance=producto)
         if form.is_valid():
             form.save()
-        return redirect('../listaProductos/')
+        return redirect('/listaProductos')
     datos = {'form':form,
              'titulo':'ACTUALIZAR PRODUCTO',
              'boton':'ACTUALIZAR PRODUCTO'}
@@ -43,4 +43,4 @@ def actualizarProducto(request, id):
 def eliminarProducto(request, id):
     producto = Producto.objects.get(idProducto = id)
     producto.delete()
-    return listaProductos(request)
+    return redirect('/listaProductos')

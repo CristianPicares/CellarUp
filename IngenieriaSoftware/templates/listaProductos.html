@@ -33,9 +33,10 @@
 
     <div class="alert alert-info display-1 text-center">LISTADO DE PRODUCTOS</div>
     {% if producto %}
-        <div class="contenedor">
-            <table class="table table-stripped table-inverse table-responsive">
-                <thead class="thead-inverse">
+    <div class="container">
+        <div>
+            <table class="table text-bg-dark p-3">
+                <thead>
                     <tr>
                         <th>ID Producto</th>
                         <th>Nombre producto</th>
@@ -59,9 +60,8 @@
                         </tr>
                     {% endfor %}
                 </tbody>
-
-
             </table>
+        </div>
         {% else %}
         <div class="alert alert-primary" role="alert">
                 <strong>NO HAY PRODUCTOS AGREGADOS</strong>
@@ -70,10 +70,9 @@
         <div id="divPadre">
             <div id="divHijo">
                 <a href="../" class="btn btn-danger">VOLVER</a>
-                <a href="agregarProducto/" class="btn btn-info float-end">AGREGAR PRODUCTO</a                
+                <a href="../agregarProducto/" class="btn btn-info float-end">AGREGAR PRODUCTO</a>                
             </div>
         </div>
->
-        </div>
+    </div>
 </body>
 </html>
