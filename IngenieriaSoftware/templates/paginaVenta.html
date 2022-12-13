@@ -9,9 +9,7 @@
     <title>Evaluacion 3</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-
 <body class="index">
-
     <nav class="navbar">
         <label for="" class="brand">
             <a href=""><img src= "{%static "images/logo3.png" %}"></a>
@@ -26,6 +24,36 @@
             <li><a href="listaProductos/">►Productos◄</a></li>
         </ul>
     </nav>
+    <!-- Cuerpo de la orden la orden de venta y opcion de enviar guia de despacho -->
+    {% if ventas %}
+    <div class="container">
+        <div>
+            <table class="table text-bg-dark p-3">
+                <thead>
+                    <tr>
+                        <th>ID Orden Venta</th>
+                        <th>Nombre producto</th>
+                        <th>Cantidad</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for venta in ventas %}
+                        <tr>
+                            <th>{{venta.idVenta }}</th>
+                            <th>{{venta.producto}}</th>
+                            <th>{{venta.cantidad}}</th>
+                            <th><a href='/actualizarProducto/{{venta.idVenta}}' class='btn btn-success btn-sm'><i class='bi bi-pencil'></i></th>
+                            <th><a href='/eliminarProducto/{{venta.idVenta}}' class='btn btn-danger btn-sm'><i class='bi bi-trash'></i></th>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% else %}
+        <div class="alert alert-primary" role="alert">
+                <strong>NO HAY ORDENES INGRESADAS</strong>
+        </div>
+        {% endif %}
 
     <footer>
         <p>Numero de telefono: 545648794</p>

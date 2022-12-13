@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from online.views import index, agregarProducto, listaProductos, actualizarProducto, eliminarProducto, codigoQR
+from online.views import index, agregarProducto, listaProductos, actualizarProducto, eliminarProducto, codigoQR, agregarOrdenVenta, listaVentas
 
 urlpatterns = [
     path('', index),
@@ -26,5 +26,6 @@ urlpatterns = [
     path('login/', codigoQR),
     path('actualizarProducto/<int:id>', actualizarProducto),
     path('eliminarProducto/<int:id>', eliminarProducto),
-    
+    path('listaVentas/', listaVentas),
+    path('agregarVenta/', agregarOrdenVenta),    
     ]
