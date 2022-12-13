@@ -15,13 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from online.views import index, agregarProducto, listaProductos, actualizarProducto, eliminarProducto
+from online.views import index, agregarProducto, listaProductos, actualizarProducto, eliminarProducto, codigoQR
 
 urlpatterns = [
     path('', index),
     path('admin/', admin.site.urls),
     path('listaProductos/', listaProductos),
     path('agregarProducto/', agregarProducto),
+    path('codigoQR/', codigoQR),
     path('actualizarProducto/<int:id>', actualizarProducto),
     path('eliminarProducto/<int:id>', eliminarProducto),
     
